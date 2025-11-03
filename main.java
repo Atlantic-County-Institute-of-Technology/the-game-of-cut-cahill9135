@@ -6,11 +6,13 @@ public class Main {
         int cpuWins = 0;
         int plyrWins = 0;
 
-        while(cpuWins < 3 && plyrWins < 3){
-            cpuWins++;
-        }
+        arrDeck deck1 = new arrDeck();
 
+        deck1.populateDeck();
 
+//        System.out.println(deck1.selectCard(5));
+
+        System.out.println(deck1.showDeck());
 
     }
 }
