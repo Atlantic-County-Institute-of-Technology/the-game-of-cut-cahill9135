@@ -7,6 +7,8 @@ public class arrDeck {
     private final Random shuffler = new Random();
     private final int DECK_SIZE = 52;
 
+
+
     public arrDeck(){
         deck = new card[DECK_SIZE];
     }
@@ -32,6 +34,16 @@ public class arrDeck {
             result += deck[i].toString() + "\n";
         }
         return result;
+    }
+
+    public card cardCut(int target) {
+        return deck[target - 1];
+    }
+
+    public void shuffleDeck() {
+        // take index 0 --> store that index
+        // random number from 0-51 --> random becomes index 0,
+        // index 0 becomes random number
     }
 
 }
