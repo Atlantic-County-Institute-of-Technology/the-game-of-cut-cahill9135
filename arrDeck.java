@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class arrDeck {
@@ -15,8 +16,10 @@ public class arrDeck {
 
     public void populateDeck() {
         int index = 0;
-        for (int suit = 1; suit <= 4; suit++) {
-            for (int face = 1; face <= 13; face++) {
+        for (int suit = 1; suit <= 4; suit++)
+        {
+            for (int face = 1; face <= 13; face++)
+            {
                 deck[index] = new card(face, suit);
                 index++;
             }
@@ -30,20 +33,32 @@ public class arrDeck {
     public String showDeck() {
         String result = "";
 
-        for(int i = 0; i < DECK_SIZE; i++) {
+        for(int i = 0; i < DECK_SIZE; i++)
+        {
             result += deck[i].toString() + "\n";
         }
         return result;
     }
 
     public card cardCut(int target) {
+        // Subtracts one to account for the user input being from 1-52, rather than making them input 0-51.
         return deck[target - 1];
     }
 
     public void shuffleDeck() {
-        // take index 0 --> store that index
-        // random number from 0-51 --> random becomes index 0,
-        // index 0 becomes random number
+        // Shuffles the deck through a bubble sort without sorting, just kinda throwing variables around.
+        for (int i= 0; i < deck.length; i++)
+        {
+            card temp = deck[i];
+            int a = shuffler.nextInt(52);
+            deck[i] = deck[a];
+            deck[a] = temp;
+        }
+    }
+
+    public void clearDeck() {
+        // Makes the whole deck null
+        Arrays.fill(deck, null);
     }
 
 }
