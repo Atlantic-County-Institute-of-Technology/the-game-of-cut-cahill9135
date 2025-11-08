@@ -17,18 +17,26 @@ public class card {
 
     // ACCESSORS
 
-    public String getSuit() {
+    public String getStringSuit() {
         return suits[suit];
     }
 
-    public String getFace() {
+    public int getSuit() {
+        return suit;
+    }
+
+    public String getStringFace() {
         return faces[face];
+    }
+
+    public int getFace() {
+        return face;
     }
 
     // String Display Function
     public String toString() {
         String result = "You have a ";
-        result = result + getFace() + "of " + getSuit() + ".";
+        result = result + getStringFace() + " of " + getStringSuit() + ".";
         return result;
     }
 }
